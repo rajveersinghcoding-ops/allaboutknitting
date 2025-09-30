@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Knitting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #5a3d5c;
+            background-color: #fffaf0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #f8c8dc, #fbd0e0);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d86c9a;
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #5a3d5c;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #d86c9a;
+        }
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #5a3d5c;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #d86c9a;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #5a3d5c;
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            background: 
+                        url('https://i.ibb.co/rGY837Vs/inputcontent.png  ') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #5a3d5c;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #5a3d5c;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        .btn {
+            display: inline-block;
+            background: #d86c9a;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(216, 108, 154, 0.3);
+        }
+        .btn:hover {
+            background: #c25a87;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(216, 108, 154, 0.4);
+        }
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, #f8e4f0, #f0d6e8);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #5a3d5c;
+            margin-bottom: 3rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #d86c9a;
+            margin-bottom: 1rem;
+        }
+        .feature-title {
+            font-size: 1.3rem;
+            color: #5a3d5c;
+            margin-bottom: 0.5rem;
+        }
+        .feature-desc {
+            color: #7d6480;
+        }
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .product-image:hover {
+            opacity: 0.9;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-name {
+            font-size: 1.2rem;
+            color: #5a3d5c;
+            margin-bottom: 0.5rem;
+        }
+        .product-price {
+            color: #d86c9a;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .product-original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #d86c9a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        .add-to-cart:hover {
+            background: #c25a87;
+        }
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-modal.active {
+            display: flex;
+        }
+        .cart-content {
+            background: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-header {
+            padding: 20px;
+            background: #f8c8dc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h2 {
+            color: #5a3d5c;
+            font-size: 1.5rem;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #5a3d5c;
+        }
+        .cart-items {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-name {
+            font-weight: bold;
+            color: #5a3d5c;
+            margin-bottom: 5px;
+        }
+        .cart-item-price {
+            color: #d86c9a;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .remove-item {
+            background: #f8c8dc;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #5a3d5c;
+            margin-left: 10px;
+        }
+        .cart-footer {
+            padding: 20px;
+            background: #f8e4f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #5a3d5c;
+        }
+        .checkout-btn {
+            background: #d86c9a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .checkout-btn:hover {
+            background: #c25a87;
+        }
+        /* Checkout Modal */
+        .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .checkout-modal.active {
+            display: flex;
+        }
+        .checkout-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            overflow: hidden;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .checkout-header {
+            padding: 20px;
+            background: #f8c8dc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .checkout-header h2 {
+            color: #5a3d5c;
+            font-size: 1.5rem;
+        }
+        .close-checkout {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #5a3d5c;
+        }
+        .checkout-body {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+            overflow-y: auto;
+        }
+        .checkout-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        .order-summary {
+            flex: 1;
+            min-width: 300px;
+            background: #f8e4f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #5a3d5c;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .card-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .card-number {
+            grid-column: span 2;
+        }
+        .expiry-cvc {
+            display: flex;
+            gap: 15px;
+        }
+        .expiry {
+            flex: 1;
+        }
+        .cvc {
+            flex: 1;
+        }
+        .order-items {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding-top: 10px;
+            border-top: 2px solid #d86c9a;
+            margin-top: 10px;
+        }
+        .checkout-footer {
+            padding: 20px;
+            background: #f8e4f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .checkout-btn {
+            background: #d86c9a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .checkout-btn:hover {
+            background: #c25a87;
+        }
+        .cancel-btn {
+            background: #f0d6e8;
+            color: #5a3d5c;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cancel-btn:hover {
+            background: #e8c4d8;
+        }
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f0f8f0, #e8f0e8);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #5a3d5c;
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #7d6480;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d86c9a;
+        }
+        .stat-label {
+            color: #7d6480;
+            font-size: 0.9rem;
+        }
+        .about-video {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 300px;
+            position: relative;
+        }
+        .video-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #5a3d5c;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .contact-info h3 {
+            color: #5a3d5c;
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail {
+            margin-bottom: 1rem;
+        }
+        .contact-detail h4 {
+            color: #5a3d5c;
+            margin-bottom: 0.25rem;
+        }
+        .contact-detail p {
+            color: #7d6480;
+        }
+        /* Footer */
+        footer {
+            background: #5a3d5c;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            color: #f8c8dc;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        .newsletter input {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        .newsletter button {
+            width: 30%;
+            padding: 10px;
+            background: #d86c9a;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #7d6480;
+            color: #ccc;
+        }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .checkout-body {
+                flex-direction: column;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-wrap: wrap;
+            }
+        }
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 1rem;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu ul {
+            list-style: none;
+        }
+        .mobile-menu ul li {
+            margin-bottom: 1rem;
+        }
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: #5a3d5c;
+            font-weight: 500;
+        }
+        /* Image Viewer */
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .image-viewer.active {
+            display: flex;
+            opacity: 1;
+        }
+        .image-viewer-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .image-viewer-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .close-viewer {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        /* Notification Toast */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #d86c9a;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 4000;
+        }
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">All About Knitting</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                </nav>
+                <div class="cart-icon" id="cartIcon">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Shopping Cart</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: $<span id="totalAmount">0.00</span></div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Complete Your Order</h2>
+                <button class="close-checkout" id="closeCheckout">&times;</button>
+            </div>
+            <div class="checkout-body">
+                <div class="checkout-form">
+                    <h3>Billing Information</h3>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" required placeholder="123 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required placeholder="New York">
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">ZIP Code</label>
+                        <input type="text" id="zipCode" required placeholder="10001">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                        </select>
+                    </div>
+                    
+                    <h3>Shipping Information</h3>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="sameAsBilling"> Same as billing information
+                        </label>
+                    </div>
+                    <div id="shippingFields" style="display:none;">
+                        <div class="form-group">
+                            <label for="shipAddress">Shipping Address</label>
+                            <input type="text" id="shipAddress" placeholder="123 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipCity">Shipping City</label>
+                            <input type="text" id="shipCity" placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipZip">Shipping ZIP Code</label>
+                            <input type="text" id="shipZip" placeholder="10001">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipCountry">Shipping Country</label>
+                            <select id="shipCountry">
+                                <option value="">Select Country</option>
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
+                                <option value="de">Germany</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <h3>Payment Information</h3>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                    </div>
+                    <div class="card-details">
+                        <div class="form-group expiry">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" required placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group cvc">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" required placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Name on Card</label>
+                        <input type="text" id="cardName" required placeholder="John Doe">
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="order-items" id="orderItems">
+                        <!-- Order items will be added here dynamically -->
+                    </div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span>$<span id="orderTotal">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-footer">
+                <button class="cancel-btn" id="cancelCheckout">Cancel</button>
+                <button class="checkout-btn" id="placeOrder">Place Order</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div>
+                <h1>Cozy Knitting Creations</h1>
+                <p>Discover our premium collection of knitting supplies and accessories</p>
+                <a href="#products" class="btn" onclick="scrollToSection('#products')">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3 class="feature-title">Free Shipping</h3>
+                    <p class="feature-desc">Free shipping on orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💖</div>
+                    <h3 class="feature-title">Quality Guarantee</h3>
+                    <p class="feature-desc">Premium materials for perfect results</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👩‍🏫</div>
+                    <h3 class="feature-title">Expert Support</h3>
+                    <p class="feature-desc">Guidance from professional knitters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Original Products -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/4f/f0/a2/4ff0a2d5f9397e734f898e837ec297d7.jpg" alt="Merino Wool Yarn" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/4f/f0/a2/4ff0a2d5f9397e734f898e837ec297d7.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Merino wool long skirt</h3>
+                        <div class="product-price">$12.99 <span class="product-original-price">$15.99</span></div>
+                        <button class="add-to-cart" data-id="1" data-name="Merino wool long skirt" data-price="12.99" data-image="https://i.pinimg.com/1200x/4f/f0/a2/4ff0a2d5f9397e734f898e837ec297d7.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/4c/c4/74/4cc474dfac4a65fcfafa734f75208b6c.jpg" alt="Bamboo Knitting Needles" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/4c/c4/74/4cc474dfac4a65fcfafa734f75208b6c.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Beautiful peacock scarf</h3>
+                        <div class="product-price">$8.99 <span class="product-original-price">$10.99</span></div>
+                        <button class="add-to-cart" data-id="2" data-name="Beautiful peacock scarf" data-price="8.99" data-image="https://i.pinimg.com/736x/4c/c4/74/4cc474dfac4a65fcfafa734f75208b6c.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/9a/1a/c7/9a1ac7a218ac259e273f8e55643fcdfb.jpg" alt="Knitting Pattern Book" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/9a/1a/c7/9a1ac7a218ac259e273f8e55643fcdfb.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Tom top</h3>
+                        <div class="product-price">$19.99 <span class="product-original-price">$24.99</span></div>
+                        <button class="add-to-cart" data-id="3" data-name="Tom top" data-price="19.99" data-image="https://i.pinimg.com/736x/9a/1a/c7/9a1ac7a218ac259e273f8e55643fcdfb.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/68/a5/c1/68a5c1f948a4adc8271faa59a3d57778.jpg" alt="Stitch Markers Set" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/68/a5/c1/68a5c1f948a4adc8271faa59a3d57778.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Petal pack</h3>
+                        <div class="product-price">$10.99 <span class="product-original-price">$8.99</span></div>
+                        <button class="add-to-cart" data-id="4" data-name="Petal pack" data-price="10.99" data-image="https://i.pinimg.com/736x/68/a5/c1/68a5c1f948a4adc8271faa59a3d57778.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/64/99/8a/64998a7096d132d059131b46ace3474e.jpg" alt="Knitting Kit" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/64/99/8a/64998a7096d132d059131b46ace3474e.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Pocket puppy purse</h3>
+                        <div class="product-price">$39.99 <span class="product-original-price">$49.99</span></div>
+                        <button class="add-to-cart" data-id="5" data-name="Pocket puppy purse" data-price="39.99" data-image="https://i.pinimg.com/736x/64/99/8a/64998a7096d132d059131b46ace3474e.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- New Products -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/04/6a/50/046a5061cd82442ae476c2bf583eb5c5.jpg" alt="Knitting Accessories Set" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/04/6a/50/046a5061cd82442ae476c2bf583eb5c5.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Table runner </h3>
+                        <div class="product-price">$24.99 <span class="product-original-price">$29.99</span></div>
+                        <button class="add-to-cart" data-id="6" data-name="Table runner" data-price="24.99" data-image="https://i.pinimg.com/736x/04/6a/50/046a5061cd82442ae476c2bf583eb5c5.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/29/e2/b6/29e2b627a80a0ef8248c2588579fffc4.jpg" alt="Aluminum Needles" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/29/e2/b6/29e2b627a80a0ef8248c2588579fffc4.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Rainbow top</h3>
+                        <div class="product-price">$15.99 <span class="product-original-price">$19.99</span></div>
+                        <button class="add-to-cart" data-id="7" data-name="Rainbow top" data-price="15.99" data-image="https://i.pinimg.com/736x/29/e2/b6/29e2b627a80a0ef8248c2588579fffc4.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/1e/cf/e3/1ecfe371f04a64ee7865a06b1e157da3.jpg" alt="Colorful Yarn Bundle" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/1e/cf/e3/1ecfe371f04a64ee7865a06b1e157da3.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Cherry blossom bedsheet</h3>
+                        <div class="product-price">$29.99 <span class="product-original-price">$34.99</span></div>
+                        <button class="add-to-cart" data-id="8" data-name="Cherry blossom bedsheet" data-price="29.99" data-image="https://i.pinimg.com/736x/1e/cf/e3/1ecfe371f04a64ee7865a06b1e157da3.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/00/0a/b6/000ab6b2158dcd4fa98ffd0ae44ac8e5.jpg" alt="Knitting Bag" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/00/0a/b6/000ab6b2158dcd4fa98ffd0ae44ac8e5.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Sunfrock</h3>
+                        <div class="product-price">$18.99 <span class="product-original-price">$22.99</span></div>
+                        <button class="add-to-cart" data-id="9" data-name="Sunfrock" data-price="18.99" data-image="https://i.pinimg.com/736x/00/0a/b6/000ab6b2158dcd4fa98ffd0ae44ac8e5.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/da/4f/b1/da4fb19aa843364543557406e46b0d36.jpg" alt="Knitting Patterns" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/da/4f/b1/da4fb19aa843364543557406e46b0d36.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Blooming sweatshirt</h3>
+                        <div class="product-price">$14.99 <span class="product-original-price">$17.99</span></div>
+                        <button class="add-to-cart" data-id="10" data-name="Blooming sweatshirt" data-price="14.99" data-image="https://i.pinimg.com/736x/da/4f/b1/da4fb19aa843364543557406e46b0d36.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/c8/43/ad/c843ad70dcd3a58c26bf41fa3217a46d.jpg" alt="Wooden Needles" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/c8/43/ad/c843ad70dcd3a58c26bf41fa3217a46d.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Denim daisy</h3>
+                        <div class="product-price">$16.99 <span class="product-original-price">$20.99</span></div>
+                        <button class="add-to-cart" data-id="11" data-name="Denim daisy" data-price="16.99" data-image="https://i.pinimg.com/736x/c8/43/ad/c843ad70dcd3a58c26bf41fa3217a46d.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Added Products -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/6c/be/ed/6cbeed9ec0076ba23a8ba4a082a50cf7.jpg" alt="Knitted Sweater" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/6c/be/ed/6cbeed9ec0076ba23a8ba4a082a50cf7.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Cozy knitted sweater</h3>
+                        <div class="product-price">$29.99 <span class="product-original-price">$34.99</span></div>
+                        <button class="add-to-cart" data-id="12" data-name="Cozy knitted sweater" data-price="29.99" data-image="https://i.pinimg.com/1200x/6c/be/ed/6cbeed9ec0076ba23a8ba4a082a50cf7.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/fb/50/74/fb50746c1440065bab7664376200c354.jpg" alt="Knitted Hat" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/fb/50/74/fb50746c1440065bab7664376200c354.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Ribbon cardigan</h3>
+                        <div class="product-price">$14.99 <span class="product-original-price">$17.99</span></div>
+                        <button class="add-to-cart" data-id="13" data-name="Warm knitted hat" data-price="14.99" data-image="https://i.pinimg.com/736x/fb/50/74/fb50746c1440065bab7664376200c354.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/0d/87/ee/0d87ee39e421912576a9cf63ca0eeedf.jpg" alt="Knitted Mittens" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/0d/87/ee/0d87ee39e421912576a9cf63ca0eeedf.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Crochet heart romper</h3>
+                        <div class="product-price">$12.99 <span class="product-original-price">$15.99</span></div>
+                        <button class="add-to-cart" data-id="14" data-name="Soft knitted mittens" data-price="12.99" data-image="https://i.pinimg.com/1200x/0d/87/ee/0d87ee39e421912576a9cf63ca0eeedf.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/60/1e/35/601e356350f622650bd669bc37446140.jpg" alt="Knitted Blanket" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/60/1e/35/601e356350f622650bd669bc37446140.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Strawberry jacket</h3>
+                        <div class="product-price">$49.99 <span class="product-original-price">$59.99</span></div>
+                        <button class="add-to-cart" data-id="15" data-name="Lavender knitted blanket" data-price="49.99" data-image="https://i.pinimg.com/1200x/60/1e/35/601e356350f622650bd669bc37446140.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/54/3d/ea/543deada2a1b2af9625903b6f4bf6862.jpg" alt="Knitted Shawl" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/54/3d/ea/543deada2a1b2af9625903b6f4bf6862.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Sun flower black cardigan</h3>
+                        <div class="product-price">$34.99 <span class="product-original-price">$39.99</span></div>
+                        <button class="add-to-cart" data-id="16" data-name="Elegant knitted shawl" data-price="34.99" data-image="https://i.pinimg.com/1200x/54/3d/ea/543deada2a1b2af9625903b6f4bf6862.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/aa/89/8b/aa898bfb532218d5bfc4da396af32b8d.jpg" alt="Knitted Socks" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/aa/89/8b/aa898bfb532218d5bfc4da396af32b8d.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Sun flower white cardigan</h3>
+                        <div class="product-price">$9.99 <span class="product-original-price">$12.99</span></div>
+                        <button class="add-to-cart" data-id="17" data-name="Comfortable knitted socks" data-price="9.99" data-image="https://i.pinimg.com/1200x/aa/89/8b/aa898bfb532218d5bfc4da396af32b8d.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/da/e4/7d/dae47d7fda626fdbf867813c734959ba.jpg" alt="Knitted Pillow" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/da/e4/7d/dae47d7fda626fdbf867813c734959ba.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Square patch pants </h3>
+                        <div class="product-price">$18.99 <span class="product-original-price">$22.99</span></div>
+                        <button class="add-to-cart" data-id="18" data-name="Decorative knitted pillow" data-price="18.99" data-image="https://i.pinimg.com/736x/da/e4/7d/dae47d7fda626fdbf867813c734959ba.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/b4/4a/aa/b44aaa41a843ac13f193e39c62d8947b.jpg" alt="Knitted Scarf" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/b4/4a/aa/b44aaa41a843ac13f193e39c62d8947b.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Beautiful bow bedsheet</h3>
+                        <div class="product-price">$16.99 <span class="product-original-price">$19.99</span></div>
+                        <button class="add-to-cart" data-id="19" data-name="Striped knitted scarf" data-price="16.99" data-image="https://i.pinimg.com/1200x/b4/4a/aa/b44aaa41a843ac13f193e39c62d8947b.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/3a/73/5d/3a735ddc2ca2fc8098b566bf9222984b.jpg" alt="Knitted Cardigan" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/3a/73/5d/3a735ddc2ca2fc8098b566bf9222984b.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Crop Cardigan with short skirt</h3>
+                        <div class="product-price">$39.99 <span class="product-original-price">$44.99</span></div>
+                        <button class="add-to-cart" data-id="20" data-name="Cozy knitted cardigan" data-price="39.99" data-image="https://i.pinimg.com/736x/3a/73/5d/3a735ddc2ca2fc8098b566bf9222984b.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/41/ab/50/41ab503da9b38263d2b28da10f95c6fb.jpg" alt="Knitted Shawl" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/41/ab/50/41ab503da9b38263d2b28da10f95c6fb.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Minnie mouse hoodie</h3>
+                        <div class="product-price">$27.99 <span class="product-original-price">$32.99</span></div>
+                        <button class="add-to-cart" data-id="21" data-name="Floral knitted shawl" data-price="27.99" data-image="https://i.pinimg.com/736x/41/ab/50/41ab503da9b38263d2b28da10f95c6fb.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/14/4d/6c/144d6c477b29d735f6b49b923c657ceb.jpg" alt="Knitted Headband" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/14/4d/6c/144d6c477b29d735f6b49b923c657ceb.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Micky Mouse dress</h3>
+                        <div class="product-price">$7.99 <span class="product-original-price">$9.99</span></div>
+                        <button class="add-to-cart" data-id="22" data-name="Soft knitted headband" data-price="7.99" data-image="https://i.pinimg.com/736x/14/4d/6c/144d6c477b29d735f6b49b923c657ceb.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/b3/ca/41/b3ca4172a52e2ad139ffb46e38bc3a9c.jpg" alt="Knitted Throw" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/b3/ca/41/b3ca4172a52e2ad139ffb46e38bc3a9c.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Bee combo</h3>
+                        <div class="product-price">$34.99 <span class="product-original-price">$39.99</span></div>
+                        <button class="add-to-cart" data-id="23" data-name="Colorful knitted throw" data-price="34.99" data-image="https://i.pinimg.com/736x/b3/ca/41/b3ca4172a52e2ad139ffb46e38bc3a9c.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/6a/47/72/6a47721ca1d25cab9f0cb088762354a6.jpg" alt="Knitted Shawl" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/6a/47/72/6a47721ca1d25cab9f0cb088762354a6.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">long lace dress</h3>
+                        <div class="product-price">$29.99 <span class="product-original-price">$34.99</span></div>
+                        <button class="add-to-cart" data-id="24" data-name="Lace knitted shawl" data-price="29.99" data-image="https://i.pinimg.com/1200x/6a/47/72/6a47721ca1d25cab9f0cb088762354a6.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/21/79/e3/2179e39e4cf23077d60ab1fd44212980.jpg" alt="Knitted Cape" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/21/79/e3/2179e39e4cf23077d60ab1fd44212980.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Stylish knitted cape</h3>
+                        <div class="product-price">$42.99 <span class="product-original-price">$49.99</span></div>
+                        <button class="add-to-cart" data-id="25" data-name="Stylish knitted cape" data-price="42.99" data-image="https://i.pinimg.com/1200x/21/79/e3/2179e39e4cf23077d60ab1fd44212980.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/98/6a/ca/986acaedf6457c9c4036c0dc25f95100.jpg" alt="Knitted Blanket" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/98/6a/ca/986acaedf6457c9c4036c0dc25f95100.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Emerald knitted top</h3>
+                        <div class="product-price">$54.99 <span class="product-original-price">$64.99</span></div>
+                        <button class="add-to-cart" data-id="26" data-name="Textured knitted blanket" data-price="54.99" data-image="https://i.pinimg.com/736x/98/6a/ca/986acaedf6457c9c4036c0dc25f95100.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/11/3c/e9/113ce9cc42123835b45be7cc7b87e560.jpg" alt="Knitted Sweater" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/11/3c/e9/113ce9cc42123835b45be7cc7b87e560.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Rubby dress</h3>
+                        <div class="product-price">$45.99 <span class="product-original-price">$52.99</span></div>
+                        <button class="add-to-cart" data-id="27" data-name="Chunky knitted sweater" data-price="45.99" data-image="https://i.pinimg.com/1200x/11/3c/e9/113ce9cc42123835b45be7cc7b87e560.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://cdn.qwenlm.ai/output/50dc6b9c-7246-4e9c-b12f-c21dc2500b3b/t2i/733b21a9-7dc3-4655-a473-c436c129a09a/1759248417.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiNTBkYzZiOWMtNzI0Ni00ZTljLWIxMmYtYzIxZGMyNTAwYjNiIiwicmVzb3VyY2VfaWQiOiIxNzU5MjQ4NDE3IiwicmVzb3VyY2VfY2hhdF9pZCI6IjM0MDllOWI1LTQyODktNGI1Yy1iNWUzLTdlY2U3YjdhYzM0OSJ9.-l6fcvuNwcx9Oz9b3ial22Vzk0sl--OxZviucOBUkKI" alt="Knitted Vest" class="product-image" onclick="openImageViewer('https://cdn.qwenlm.ai/output/50dc6b9c-7246-4e9c-b12f-c21dc2500b3b/t2i/733b21a9-7dc3-4655-a473-c436c129a09a/1759248417.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiNTBkYzZiOWMtNzI0Ni00ZTljLWIxMmYtYzIxZGMyNTAwYjNiIiwicmVzb3VyY2VfaWQiOiIxNzU5MjQ4NDE3IiwicmVzb3VyY2VfY2hhdF9pZCI6IjM0MDllOWI1LTQyODktNGI1Yy1iNWUzLTdlY2U3YjdhYzM0OSJ9.-l6fcvuNwcx9Oz9b3ial22Vzk0sl--OxZviucOBUkKI')">
+                    <div class="product-info">
+                        <h3 class="product-name">Blooming baby dress</h3>
+                        <div class="product-price">$24.99 <span class="product-original-price">$29.99</span></div>
+                        <button class="add-to-cart" data-id="28" data-name="Warm knitted vest" data-price="24.99" data-image="https://cdn.qwenlm.ai/output/50dc6b9c-7246-4e9c-b12f-c21dc2500b3b/t2i/733b21a9-7dc3-4655-a473-c436c129a09a/1759248417.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiNTBkYzZiOWMtNzI0Ni00ZTljLWIxMmYtYzIxZGMyNTAwYjNiIiwicmVzb3VyY2VfaWQiOiIxNzU5MjQ4NDE3IiwicmVzb3VyY2VfY2hhdF9pZCI6IjM0MDllOWI1LTQyODktNGI1Yy1iNWUzLTdlY2U3YjdhYzM0OSJ9.-l6fcvuNwcx9Oz9b3ial22Vzk0sl--OxZviucOBUkKI">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/25/09/1a/25091a7b51112993a1e432f64fdf24a7.jpg" alt="Knitted Shawl" class="product-image" onclick="openImageViewer('https://i.pinimg.com/736x/25/09/1a/25091a7b51112993a1e432f64fdf24a7.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Sunflower crochet cusion</h3>
+                        <div class="product-price">$31.99 <span class="product-original-price">$36.99</span></div>
+                        <button class="add-to-cart" data-id="29" data-name="Delicate knitted shawl" data-price="31.99" data-image="https://i.pinimg.com/736x/25/09/1a/25091a7b51112993a1e432f64fdf24a7.jpg">Add to Cart</button>
+                    </div>
+                </div>
+                  <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/dc/8c/1a/dc8c1aae805ab366388025b2aa98f741.jpg" alt="Knitted Shawl" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/dc/8c/1a/dc8c1aae805ab366388025b2aa98f741.jpg')">
+                    <div class="product-info">
+                        <h3 class="product-name">Sofa cover with mat</h3>
+                        <div class="product-price">$37.99 <span class="product-original-price">$36.99</span></div>
+                        <button class="add-to-cart" data-id="29" data-name="Delicate knitted shawl" data-price="31.99" data-image="https://i.pinimg.com/1200x/dc/8c/1a/dc8c1aae805ab366388025b2aa98f741.jpg">Add to Cart</button>
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section with Auto-switching Video -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About All About Knitting</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Creating Cozy Memories</h2>
+                    <p>Founded in 2010, All About Knitting has been passionate about bringing high-quality knitting supplies to crafters of all skill levels. We believe in the power of handmade creations and the joy they bring.</p>
+                    <p>Our carefully curated selection includes premium yarns, ergonomic needles, and all the accessories you need to bring your knitting visions to life. Every product in our collection is chosen with quality and craftsmanship in mind.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Happy Customers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-video">
+                    <div class="video-container">
+                        <!-- Auto-switching video element -->
+                        <video id="knittingVideo" autoplay muted playsinline>
+                            <source src="cover.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Contact Us</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <h4>Address</h4>
+                        <p>123 Knitting Lane, Craftsville, CA 90210</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Phone</h4>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <p>info@allaboutknitting.com</p>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Hours</h4>
+                        <p>Monday - Friday: 9AM - 6PM</p>
+                        <p>Saturday: 10AM - 4PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>All About Knitting</h3>
+                    <p>Your premier destination for quality knitting supplies and accessories.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
+                        <li><a href="#products" onclick="scrollToSection('#products')">Products</a></li>
+                        <li><a href="#about" onclick="scrollToSection('#about')">About</a></li>
+                        <li><a href="#contact" onclick="scrollToSection('#contact')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" onclick="scrollToSection('#products')">Yarns</a></li>
+                        <li><a href="#" onclick="scrollToSection('#products')">Needles</a></li>
+                        <li><a href="#" onclick="scrollToSection('#products')">Accessories</a></li>
+                        <li><a href="#" onclick="scrollToSection('#products')">Patterns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates and special offers.</p>
+                    <div style="display: flex; margin-top: 1rem;">
+                        <input type="email" placeholder="Your email">
+                        <button type="button" class="btn" onclick="alert('Thank you for subscribing!')">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 All About Knitting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Image Viewer -->
+    <div class="image-viewer" id="imageViewer">
+        <button class="close-viewer" id="closeViewer">&times;</button>
+        <div class="image-viewer-content">
+            <img id="viewerImage" class="image-viewer-img" src="" alt="Full view">
+        </div>
+    </div>
+    
+    <!-- Background Music (hidden) -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="bg.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Notification Toast -->
+    <div class="notification" id="notification"></div>
+    
+    <script>
+        // Video switching functionality
+        let currentVideo = 'cover';
+        const videoElement = document.getElementById('knittingVideo');
+        
+        // Function to switch videos
+        function switchVideo() {
+            if (currentVideo === 'cover') {
+                videoElement.src = 'hanging.mp4';
+                currentVideo = 'hanging';
+            } else {
+                videoElement.src = 'cover.mp4';
+                currentVideo = 'cover';
+            }
+            // Play the new video
+            videoElement.play();
+        }
+        
+        // Set up event listener for when video ends
+        videoElement.addEventListener('ended', switchVideo);
+        
+        // Initialize the video
+        videoElement.src = 'cover.mp4';
+        videoElement.play();
+        
+        // Background Music functionality
+        const bgMusic = document.getElementById('bgMusic');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set volume to a comfortable level
+            bgMusic.volume = 0.3;
+            
+            // Try to play the music
+            bgMusic.play().catch(function(error) {
+                console.log("Autoplay was prevented:", error);
+                // If autoplay is blocked, we'll try to play when the user interacts with the page
+                document.addEventListener('click', function() {
+                    bgMusic.play();
+                }, { once: true });
+            });
+        });
+        
+        // Shopping Cart functionality
+        let cart = [];
+        
+        // DOM Elements
+        const cartIcon = document.getElementById('cartIcon');
+        const cartCount = document.getElementById('cartCount');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const totalAmount = document.getElementById('totalAmount');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Checkout modal elements
+        const checkoutModal = document.getElementById('checkoutModal');
+        const closeCheckout = document.getElementById('closeCheckout');
+        const cancelCheckout = document.getElementById('cancelCheckout');
+        const placeOrder = document.getElementById('placeOrder');
+        const orderItems = document.getElementById('orderItems');
+        const orderTotal = document.getElementById('orderTotal');
+        const sameAsBilling = document.getElementById('sameAsBilling');
+        const shippingFields = document.getElementById('shippingFields');
+        
+        // Open cart modal
+        cartIcon.addEventListener('click', () => {
+            cartModal.classList.add('active');
+        });
+        
+        // Close cart modal
+        closeCart.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+        
+        // Close cart when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.classList.remove('active');
+            }
+        });
+        
+        // Open checkout modal from cart
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty!');
+                return;
+            }
+            
+            // Update order summary in checkout modal
+            updateOrderSummary();
+            
+            // Close cart and open checkout
+            cartModal.classList.remove('active');
+            checkoutModal.classList.add('active');
+        });
+        
+        // Close checkout modal
+        closeCheckout.addEventListener('click', () => {
+            checkoutModal.classList.remove('active');
+        });
+        
+        cancelCheckout.addEventListener('click', () => {
+            checkoutModal.classList.remove('active');
+        });
+        
+        // Close checkout when clicking outside
+        checkoutModal.addEventListener('click', (e) => {
+            if (e.target === checkoutModal) {
+                checkoutModal.classList.remove('active');
+            }
+        });
+        
+        // Toggle shipping fields
+        sameAsBilling.addEventListener('change', () => {
+            shippingFields.style.display = sameAsBilling.checked ? 'none' : 'block';
+        });
+        
+        // Add to cart functionality
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const product = e.target.closest('.product-card');
+                const id = e.target.dataset.id;
+                const name = e.target.dataset.name;
+                const price = parseFloat(e.target.dataset.price);
+                const image = e.target.dataset.image;
+                
+                // Check if product is already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Show notification
+                showNotification(`${name} added to cart!`);
+            });
+        });
+        
+        // Update cart display
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Clear cart items container
+            cartItems.innerHTML = '';
+            
+            // Add each item to the cart
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+                cartItemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">$${item.price.toFixed(2)} each</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn decrease-qty" data-id="${item.id}">-</button>
+                            <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
+                            <button class="quantity-btn increase-qty" data-id="${item.id}">+</button>
+                            <button class="remove-item" data-id="${item.id}">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            // Update total amount
+            totalAmount.textContent = total.toFixed(2);
+            
+            // Add event listeners for quantity controls
+            document.querySelectorAll('.increase-qty').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    if (item) {
+                        item.quantity += 1;
+                        updateCart();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.decrease-qty').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    if (item && item.quantity > 1) {
+                        item.quantity -= 1;
+                        updateCart();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', (e) => {
+                    const id = e.target.dataset.id;
+                    const quantity = parseInt(e.target.value);
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item && quantity > 0) {
+                        item.quantity = quantity;
+                        updateCart();
+                    } else {
+                        e.target.value = item.quantity;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    cart = cart.filter(item => item.id !== id);
+                    updateCart();
+                });
+            });
+        }
+        
+        // Update order summary in checkout modal
+        function updateOrderSummary() {
+            orderItems.innerHTML = '';
+            
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const orderItemElement = document.createElement('div');
+                orderItemElement.classList.add('order-item');
+                orderItemElement.innerHTML = `
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span>$${itemTotal.toFixed(2)}</span>
+                `;
+                orderItems.appendChild(orderItemElement);
+            });
+            
+            orderTotal.textContent = total.toFixed(2);
+        }
+        
+        // Place order functionality
+        placeOrder.addEventListener('click', () => {
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const zipCode = document.getElementById('zipCode').value;
+            const country = document.getElementById('country').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvc = document.getElementById('cvc').value;
+            const cardName = document.getElementById('cardName').value;
+            
+            // Basic validation
+            if (!fullName || !email || !address || !city || !zipCode || !country || 
+                !cardNumber || !expiryDate || !cvc || !cardName) {
+                showNotification('Please fill in all required fields');
+                return;
+            }
+            
+            // Validate card number (simple validation)
+            const cardNumberRegex = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
+            if (!cardNumberRegex.test(cardNumber)) {
+                showNotification('Please enter a valid card number (1234 5678 9012 3456)');
+                return;
+            }
+            
+            // Validate expiry date
+            const expiryRegex = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+            if (!expiryRegex.test(expiryDate)) {
+                showNotification('Please enter a valid expiry date (MM/YY)');
+                return;
+            }
+            
+            // Validate CVC
+            const cvcRegex = /^\d{3}$/;
+            if (!cvcRegex.test(cvc)) {
+                showNotification('Please enter a valid CVC (3 digits)');
+                return;
+            }
+            
+            // Process order (in a real app, this would go to a server)
+            alert(`Order placed successfully!\n\nThank you for your purchase, ${fullName}!\n\nYour order details have been sent to ${email}`);
+            
+            // Clear cart after successful order
+            cart = [];
+            updateCart();
+            
+            // Close checkout modal
+            checkoutModal.classList.remove('active');
+            
+            // Reset form
+            document.getElementById('checkoutForm').reset();
+        });
+        
+        // Format card number as user types
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 16) value = value.substring(0, 16);
+            
+            let formattedValue = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) formattedValue += ' ';
+                formattedValue += value[i];
+            }
+            
+            e.target.value = formattedValue;
+        });
+        
+        // Format expiry date as user types
+        document.getElementById('expiryDate').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 4) value = value.substring(0, 4);
+            
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
+            
+            e.target.value = value;
+        });
+        
+        // Show notification function
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Image Viewer functionality
+        function openImageViewer(imageSrc) {
+            const viewer = document.getElementById('imageViewer');
+            const imgElement = document.getElementById('viewerImage');
+            imgElement.src = imageSrc;
+            viewer.classList.add('active');
+        }
+        
+        function closeImageViewer() {
+            document.getElementById('imageViewer').classList.remove('active');
+        }
+        
+        document.getElementById('closeViewer').addEventListener('click', closeImageViewer);
+        
+        // Close image viewer if clicked outside the image
+        document.getElementById('imageViewer').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageViewer();
+            }
+        });
+        
+        // Prevent closing image viewer if clicking inside the image content
+        document.getElementById('viewerImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Example scroll function
+        function scrollToSection(sectionId) {
+            const element = document.querySelector(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.remove('active');
+            }
+        }
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
