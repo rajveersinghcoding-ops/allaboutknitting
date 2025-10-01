@@ -13,7 +13,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #5a3d5c;
+            color: #000000;
             background-color: #fffaf0;
         }
         .container {
@@ -83,7 +83,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #5a3d5c;
+            color: #f56dff;
         }
         /* Hero Section */
         .hero {
@@ -99,20 +99,20 @@
         }
         .hero-content h1 {
             font-size: 3rem;
-            color: #5a3d5c;
+            color: #000000;
             margin-bottom: 1rem;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
         .hero-content p {
             font-size: 1.2rem;
-            color: #5a3d5c;
+            color: #000000;
             margin-bottom: 2rem;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
         .btn {
             display: inline-block;
-            background: #d86c9a;
-            color: white;
+            background: #ffffff;
+            color: rgb(240, 171, 250);
             padding: 12px 30px;
             border: none;
             border-radius: 25px;
@@ -123,20 +123,20 @@
             box-shadow: 0 4px 15px rgba(216, 108, 154, 0.3);
         }
         .btn:hover {
-            background: #c25a87;
+            background: hsl(334, 100%, 64%);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(216, 108, 154, 0.4);
         }
         /* Features Section */
         .features {
-            background: linear-gradient(135deg, #f8e4f0, #f0d6e8);
+            background: linear-gradient(135deg, #f8e4f0, #dfaaea);
             padding: 4rem 0;
             margin-bottom: 3rem;
         }
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #5a3d5c;
+            color: #000000;
             margin-bottom: 3rem;
         }
         .features-grid {
@@ -162,11 +162,11 @@
         }
         .feature-title {
             font-size: 1.3rem;
-            color: #5a3d5c;
+            color: #000000;
             margin-bottom: 0.5rem;
         }
         .feature-desc {
-            color: #7d6480;
+            color: #000000;
         }
         /* Products Section */
         .products {
@@ -819,7 +819,6 @@
             </div>
         </div>
     </header>
-    
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
@@ -836,7 +835,6 @@
             </div>
         </div>
     </div>
-    
     <!-- Checkout Modal -->
     <div class="checkout-modal" id="checkoutModal">
         <div class="checkout-content">
@@ -878,7 +876,6 @@
                             <option value="de">Germany</option>
                         </select>
                     </div>
-                    
                     <h3>Shipping Information</h3>
                     <div class="form-group">
                         <label>
@@ -910,7 +907,6 @@
                             </select>
                         </div>
                     </div>
-                    
                     <h3>Payment Information</h3>
                     <div class="form-group">
                         <label for="cardNumber">Card Number</label>
@@ -931,7 +927,6 @@
                         <input type="text" id="cardName" required placeholder="John Doe">
                     </div>
                 </div>
-                
                 <div class="order-summary">
                     <h3>Order Summary</h3>
                     <div class="order-items" id="orderItems">
@@ -949,18 +944,16 @@
             </div>
         </div>
     </div>
-    
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div>
                 <h1>Cozy Knitting Creations</h1>
                 <p>Discover our premium collection of knitting supplies and accessories</p>
-                <a href="#products" class="btn" onclick="scrollToSection('#products')">Shop Now</a>
+                <a href="#products" class="btn">Shop Now</a>
             </div>
         </div>
     </section>
-    
     <!-- Features Section -->
     <section class="features">
         <div class="container">
@@ -984,7 +977,6 @@
             </div>
         </div>
     </section>
-    
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
@@ -1037,7 +1029,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Table runner </h3>
                         <div class="product-price">$24.99 <span class="product-original-price">$29.99</span></div>
-                        <button class="add-to-cart" data-id="6" data-name="Table runner" data-price="24.99" data-image="https://i.pinimg.com/736x/04/6a/50/046a5061cd82442ae476c2bf583eb5c5.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="6" data-name="Table runner " data-price="24.99" data-image="https://i.pinimg.com/736x/04/6a/50/046a5061cd82442ae476c2bf583eb5c5.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1080,7 +1072,6 @@
                         <button class="add-to-cart" data-id="11" data-name="Denim daisy" data-price="16.99" data-image="https://i.pinimg.com/736x/c8/43/ad/c843ad70dcd3a58c26bf41fa3217a46d.jpg">Add to Cart</button>
                     </div>
                 </div>
-                
                 <!-- Added Products -->
                 <div class="product-card">
                     <img src="https://i.pinimg.com/1200x/6c/be/ed/6cbeed9ec0076ba23a8ba4a082a50cf7.jpg" alt="Knitted Sweater" class="product-image" onclick="openImageViewer('https://i.pinimg.com/1200x/6c/be/ed/6cbeed9ec0076ba23a8ba4a082a50cf7.jpg')">
@@ -1095,7 +1086,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Ribbon cardigan</h3>
                         <div class="product-price">$14.99 <span class="product-original-price">$17.99</span></div>
-                        <button class="add-to-cart" data-id="13" data-name="Warm knitted hat" data-price="14.99" data-image="https://i.pinimg.com/736x/fb/50/74/fb50746c1440065bab7664376200c354.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="13" data-name="Ribbon cardigan" data-price="14.99" data-image="https://i.pinimg.com/736x/fb/50/74/fb50746c1440065bab7664376200c354.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1103,7 +1094,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Crochet heart romper</h3>
                         <div class="product-price">$12.99 <span class="product-original-price">$15.99</span></div>
-                        <button class="add-to-cart" data-id="14" data-name="Soft knitted mittens" data-price="12.99" data-image="https://i.pinimg.com/1200x/0d/87/ee/0d87ee39e421912576a9cf63ca0eeedf.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="14" data-name="Crochet heart romper" data-price="12.99" data-image="https://i.pinimg.com/1200x/0d/87/ee/0d87ee39e421912576a9cf63ca0eeedf.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1111,7 +1102,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Strawberry jacket</h3>
                         <div class="product-price">$49.99 <span class="product-original-price">$59.99</span></div>
-                        <button class="add-to-cart" data-id="15" data-name="Lavender knitted blanket" data-price="49.99" data-image="https://i.pinimg.com/1200x/60/1e/35/601e356350f622650bd669bc37446140.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="15" data-name="Strawberry jacket" data-price="49.99" data-image="https://i.pinimg.com/1200x/60/1e/35/601e356350f622650bd669bc37446140.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1119,7 +1110,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Sun flower black cardigan</h3>
                         <div class="product-price">$34.99 <span class="product-original-price">$39.99</span></div>
-                        <button class="add-to-cart" data-id="16" data-name="Elegant knitted shawl" data-price="34.99" data-image="https://i.pinimg.com/1200x/54/3d/ea/543deada2a1b2af9625903b6f4bf6862.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="16" data-name="Sun flower black cardigan" data-price="34.99" data-image="https://i.pinimg.com/1200x/54/3d/ea/543deada2a1b2af9625903b6f4bf6862.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1127,7 +1118,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Sun flower white cardigan</h3>
                         <div class="product-price">$9.99 <span class="product-original-price">$12.99</span></div>
-                        <button class="add-to-cart" data-id="17" data-name="Comfortable knitted socks" data-price="9.99" data-image="https://i.pinimg.com/1200x/aa/89/8b/aa898bfb532218d5bfc4da396af32b8d.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="17" data-name="Sun flower white cardigan" data-price="9.99" data-image="https://i.pinimg.com/1200x/aa/89/8b/aa898bfb532218d5bfc4da396af32b8d.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1135,7 +1126,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Square patch pants </h3>
                         <div class="product-price">$18.99 <span class="product-original-price">$22.99</span></div>
-                        <button class="add-to-cart" data-id="18" data-name="Decorative knitted pillow" data-price="18.99" data-image="https://i.pinimg.com/736x/da/e4/7d/dae47d7fda626fdbf867813c734959ba.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="18" data-name="Square patch pants " data-price="18.99" data-image="https://i.pinimg.com/736x/da/e4/7d/dae47d7fda626fdbf867813c734959ba.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1143,7 +1134,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Beautiful bow bedsheet</h3>
                         <div class="product-price">$16.99 <span class="product-original-price">$19.99</span></div>
-                        <button class="add-to-cart" data-id="19" data-name="Striped knitted scarf" data-price="16.99" data-image="https://i.pinimg.com/1200x/b4/4a/aa/b44aaa41a843ac13f193e39c62d8947b.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="19" data-name="Beautiful bow bedsheet" data-price="16.99" data-image="https://i.pinimg.com/1200x/b4/4a/aa/b44aaa41a843ac13f193e39c62d8947b.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1151,7 +1142,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Crop Cardigan with short skirt</h3>
                         <div class="product-price">$39.99 <span class="product-original-price">$44.99</span></div>
-                        <button class="add-to-cart" data-id="20" data-name="Cozy knitted cardigan" data-price="39.99" data-image="https://i.pinimg.com/736x/3a/73/5d/3a735ddc2ca2fc8098b566bf9222984b.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="20" data-name="Crop Cardigan with short skirt" data-price="39.99" data-image="https://i.pinimg.com/736x/3a/73/5d/3a735ddc2ca2fc8098b566bf9222984b.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1159,7 +1150,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Minnie mouse hoodie</h3>
                         <div class="product-price">$27.99 <span class="product-original-price">$32.99</span></div>
-                        <button class="add-to-cart" data-id="21" data-name="Floral knitted shawl" data-price="27.99" data-image="https://i.pinimg.com/736x/41/ab/50/41ab503da9b38263d2b28da10f95c6fb.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="21" data-name="Minnie mouse hoodie" data-price="27.99" data-image="https://i.pinimg.com/736x/41/ab/50/41ab503da9b38263d2b28da10f95c6fb.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1167,7 +1158,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Micky Mouse dress</h3>
                         <div class="product-price">$7.99 <span class="product-original-price">$9.99</span></div>
-                        <button class="add-to-cart" data-id="22" data-name="Soft knitted headband" data-price="7.99" data-image="https://i.pinimg.com/736x/14/4d/6c/144d6c477b29d735f6b49b923c657ceb.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="22" data-name="Micky Mouse dress" data-price="7.99" data-image="https://i.pinimg.com/736x/14/4d/6c/144d6c477b29d735f6b49b923c657ceb.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1175,7 +1166,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Bee combo</h3>
                         <div class="product-price">$34.99 <span class="product-original-price">$39.99</span></div>
-                        <button class="add-to-cart" data-id="23" data-name="Colorful knitted throw" data-price="34.99" data-image="https://i.pinimg.com/736x/b3/ca/41/b3ca4172a52e2ad139ffb46e38bc3a9c.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="23" data-name="Bee combo" data-price="34.99" data-image="https://i.pinimg.com/736x/b3/ca/41/b3ca4172a52e2ad139ffb46e38bc3a9c.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1183,7 +1174,7 @@
                     <div class="product-info">
                         <h3 class="product-name">long lace dress</h3>
                         <div class="product-price">$29.99 <span class="product-original-price">$34.99</span></div>
-                        <button class="add-to-cart" data-id="24" data-name="Lace knitted shawl" data-price="29.99" data-image="https://i.pinimg.com/1200x/6a/47/72/6a47721ca1d25cab9f0cb088762354a6.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="24" data-name="long lace dress" data-price="29.99" data-image="https://i.pinimg.com/1200x/6a/47/72/6a47721ca1d25cab9f0cb088762354a6.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1199,7 +1190,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Emerald knitted top</h3>
                         <div class="product-price">$54.99 <span class="product-original-price">$64.99</span></div>
-                        <button class="add-to-cart" data-id="26" data-name="Textured knitted blanket" data-price="54.99" data-image="https://i.pinimg.com/736x/98/6a/ca/986acaedf6457c9c4036c0dc25f95100.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="26" data-name="Emerald knitted top" data-price="54.99" data-image="https://i.pinimg.com/736x/98/6a/ca/986acaedf6457c9c4036c0dc25f95100.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1207,7 +1198,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Rubby dress</h3>
                         <div class="product-price">$45.99 <span class="product-original-price">$52.99</span></div>
-                        <button class="add-to-cart" data-id="27" data-name="Chunky knitted sweater" data-price="45.99" data-image="https://i.pinimg.com/1200x/11/3c/e9/113ce9cc42123835b45be7cc7b87e560.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="27" data-name="Rubby dress" data-price="45.99" data-image="https://i.pinimg.com/1200x/11/3c/e9/113ce9cc42123835b45be7cc7b87e560.jpg">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1215,7 +1206,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Blooming baby dress</h3>
                         <div class="product-price">$24.99 <span class="product-original-price">$29.99</span></div>
-                        <button class="add-to-cart" data-id="28" data-name="Warm knitted vest" data-price="24.99" data-image="https://cdn.qwenlm.ai/output/50dc6b9c-7246-4e9c-b12f-c21dc2500b3b/t2i/733b21a9-7dc3-4655-a473-c436c129a09a/1759248417.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiNTBkYzZiOWMtNzI0Ni00ZTljLWIxMmYtYzIxZGMyNTAwYjNiIiwicmVzb3VyY2VfaWQiOiIxNzU5MjQ4NDE3IiwicmVzb3VyY2VfY2hhdF9pZCI6IjM0MDllOWI1LTQyODktNGI1Yy1iNWUzLTdlY2U3YjdhYzM0OSJ9.-l6fcvuNwcx9Oz9b3ial22Vzk0sl--OxZviucOBUkKI">Add to Cart</button>
+                        <button class="add-to-cart" data-id="28" data-name="Blooming baby dress" data-price="24.99" data-image="https://cdn.qwenlm.ai/output/50dc6b9c-7246-4e9c-b12f-c21dc2500b3b/t2i/733b21a9-7dc3-4655-a473-c436c129a09a/1759248417.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiNTBkYzZiOWMtNzI0Ni00ZTljLWIxMmYtYzIxZGMyNTAwYjNiIiwicmVzb3VyY2VfaWQiOiIxNzU5MjQ4NDE3IiwicmVzb3VyY2VfY2hhdF9pZCI6IjM0MDllOWI1LTQyODktNGI1Yy1iNWUzLTdlY2U3YjdhYzM0OSJ9.-l6fcvuNwcx9Oz9b3ial22Vzk0sl--OxZviucOBUkKI">Add to Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
@@ -1223,7 +1214,7 @@
                     <div class="product-info">
                         <h3 class="product-name">Sunflower crochet cusion</h3>
                         <div class="product-price">$31.99 <span class="product-original-price">$36.99</span></div>
-                        <button class="add-to-cart" data-id="29" data-name="Delicate knitted shawl" data-price="31.99" data-image="https://i.pinimg.com/736x/25/09/1a/25091a7b51112993a1e432f64fdf24a7.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="29" data-name="Sunflower crochet cusion" data-price="31.99" data-image="https://i.pinimg.com/736x/25/09/1a/25091a7b51112993a1e432f64fdf24a7.jpg">Add to Cart</button>
                     </div>
                 </div>
                   <div class="product-card">
@@ -1231,16 +1222,15 @@
                     <div class="product-info">
                         <h3 class="product-name">Sofa cover with mat</h3>
                         <div class="product-price">$37.99 <span class="product-original-price">$36.99</span></div>
-                        <button class="add-to-cart" data-id="29" data-name="Delicate knitted shawl" data-price="31.99" data-image="https://i.pinimg.com/1200x/dc/8c/1a/dc8c1aae805ab366388025b2aa98f741.jpg">Add to Cart</button>
+                        <button class="add-to-cart" data-id="30" data-name="Sofa cover with mat" data-price="37.99" data-image="https://i.pinimg.com/1200x/dc/8c/1a/dc8c1aae805ab366388025b2aa98f741.jpg">Add to Cart</button>
                     </div>
             </div>
         </div>
     </section>
-    
     <!-- About Section with Auto-switching Video -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About All About Knitting</h2>
+            <h2 class="section-title"> About Us</h2>
             <div class="about-content">
                 <div class="about-text">
                     <h2>Creating Cozy Memories</h2>
@@ -1273,7 +1263,6 @@
             </div>
         </div>
     </section>
-    
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1301,27 +1290,26 @@
                     <h3>Contact Information</h3>
                     <div class="contact-detail">
                         <h4>Address</h4>
-                        <p>123 Knitting Lane, Craftsville, CA 90210</p>
+                        <p>Amritsar, Punjab</p>
                     </div>
                     <div class="contact-detail">
                         <h4>Phone</h4>
-                        <p>(555) 123-4567</p>
+                        <p>8802503501</p>
                     </div>
                     <div class="contact-detail">
                         <h4>Email</h4>
-                        <p>info@allaboutknitting.com</p>
+                        <p>allaboutknitting@gmail.com</p>
                     </div>
                     <div class="contact-detail">
-                        <h4>Hours</h4>
-                        <p>Monday - Friday: 9AM - 6PM</p>
-                        <p>Saturday: 10AM - 4PM</p>
-                        <p>Sunday: Closed</p>
+                        <h4></h4>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1333,19 +1321,19 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home" onclick="scrollToSection('#home')">Home</a></li>
-                        <li><a href="#products" onclick="scrollToSection('#products')">Products</a></li>
-                        <li><a href="#about" onclick="scrollToSection('#about')">About</a></li>
-                        <li><a href="#contact" onclick="scrollToSection('#contact')">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Categories</h3>
                     <ul>
-                        <li><a href="#" onclick="scrollToSection('#products')">Yarns</a></li>
-                        <li><a href="#" onclick="scrollToSection('#products')">Needles</a></li>
-                        <li><a href="#" onclick="scrollToSection('#products')">Accessories</a></li>
-                        <li><a href="#" onclick="scrollToSection('#products')">Patterns</a></li>
+                        <li><a href="#products">Yarns</a></li>
+                        <li><a href="#products">Needles</a></li>
+                        <li><a href="#products">Accessories</a></li>
+                        <li><a href="#products">Patterns</a></li>
                     </ul>
                 </div>
                 <div class="footer-column newsletter">
@@ -1362,7 +1350,6 @@
             </div>
         </div>
     </footer>
-    
     <!-- Image Viewer -->
     <div class="image-viewer" id="imageViewer">
         <button class="close-viewer" id="closeViewer">&times;</button>
@@ -1370,21 +1357,17 @@
             <img id="viewerImage" class="image-viewer-img" src="" alt="Full view">
         </div>
     </div>
-    
     <!-- Background Music (hidden) -->
     <audio id="bgMusic" loop autoplay>
         <source src="bg.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    
     <!-- Notification Toast -->
     <div class="notification" id="notification"></div>
-    
     <script>
         // Video switching functionality
         let currentVideo = 'cover';
         const videoElement = document.getElementById('knittingVideo');
-        
         // Function to switch videos
         function switchVideo() {
             if (currentVideo === 'cover') {
@@ -1397,21 +1380,16 @@
             // Play the new video
             videoElement.play();
         }
-        
         // Set up event listener for when video ends
         videoElement.addEventListener('ended', switchVideo);
-        
         // Initialize the video
         videoElement.src = 'cover.mp4';
         videoElement.play();
-        
         // Background Music functionality
         const bgMusic = document.getElementById('bgMusic');
-        
         document.addEventListener('DOMContentLoaded', function() {
             // Set volume to a comfortable level
             bgMusic.volume = 0.3;
-            
             // Try to play the music
             bgMusic.play().catch(function(error) {
                 console.log("Autoplay was prevented:", error);
@@ -1421,10 +1399,8 @@
                 }, { once: true });
             });
         });
-        
         // Shopping Cart functionality
         let cart = [];
-        
         // DOM Elements
         const cartIcon = document.getElementById('cartIcon');
         const cartCount = document.getElementById('cartCount');
@@ -1434,7 +1410,6 @@
         const totalAmount = document.getElementById('totalAmount');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        
         // Checkout modal elements
         const checkoutModal = document.getElementById('checkoutModal');
         const closeCheckout = document.getElementById('closeCheckout');
@@ -1444,60 +1419,49 @@
         const orderTotal = document.getElementById('orderTotal');
         const sameAsBilling = document.getElementById('sameAsBilling');
         const shippingFields = document.getElementById('shippingFields');
-        
         // Open cart modal
         cartIcon.addEventListener('click', () => {
             cartModal.classList.add('active');
         });
-        
         // Close cart modal
         closeCart.addEventListener('click', () => {
             cartModal.classList.remove('active');
         });
-        
         // Close cart when clicking outside
         cartModal.addEventListener('click', (e) => {
             if (e.target === cartModal) {
                 cartModal.classList.remove('active');
             }
         });
-        
         // Open checkout modal from cart
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
                 showNotification('Your cart is empty!');
                 return;
             }
-            
             // Update order summary in checkout modal
             updateOrderSummary();
-            
             // Close cart and open checkout
             cartModal.classList.remove('active');
             checkoutModal.classList.add('active');
         });
-        
         // Close checkout modal
         closeCheckout.addEventListener('click', () => {
             checkoutModal.classList.remove('active');
         });
-        
         cancelCheckout.addEventListener('click', () => {
             checkoutModal.classList.remove('active');
         });
-        
         // Close checkout when clicking outside
         checkoutModal.addEventListener('click', (e) => {
             if (e.target === checkoutModal) {
                 checkoutModal.classList.remove('active');
             }
         });
-        
         // Toggle shipping fields
         sameAsBilling.addEventListener('change', () => {
             shippingFields.style.display = sameAsBilling.checked ? 'none' : 'block';
         });
-        
         // Add to cart functionality
         addToCartButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -1506,10 +1470,8 @@
                 const name = e.target.dataset.name;
                 const price = parseFloat(e.target.dataset.price);
                 const image = e.target.dataset.image;
-                
                 // Check if product is already in cart
                 const existingItem = cart.find(item => item.id === id);
-                
                 if (existingItem) {
                     existingItem.quantity += 1;
                 } else {
@@ -1521,29 +1483,23 @@
                         quantity: 1
                     });
                 }
-                
                 updateCart();
-                
                 // Show notification
                 showNotification(`${name} added to cart!`);
             });
         });
-        
         // Update cart display
         function updateCart() {
             // Update cart count
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
             cartCount.textContent = totalItems;
-            
             // Clear cart items container
             cartItems.innerHTML = '';
-            
             // Add each item to the cart
             let total = 0;
             cart.forEach(item => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                
                 const cartItemElement = document.createElement('div');
                 cartItemElement.classList.add('cart-item');
                 cartItemElement.innerHTML = `
@@ -1561,10 +1517,8 @@
                 `;
                 cartItems.appendChild(cartItemElement);
             });
-            
             // Update total amount
             totalAmount.textContent = total.toFixed(2);
-            
             // Add event listeners for quantity controls
             document.querySelectorAll('.increase-qty').forEach(button => {
                 button.addEventListener('click', (e) => {
@@ -1576,7 +1530,6 @@
                     }
                 });
             });
-            
             document.querySelectorAll('.decrease-qty').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const id = e.target.dataset.id;
@@ -1587,13 +1540,11 @@
                     }
                 });
             });
-            
             document.querySelectorAll('.quantity-input').forEach(input => {
                 input.addEventListener('change', (e) => {
                     const id = e.target.dataset.id;
                     const quantity = parseInt(e.target.value);
                     const item = cart.find(item => item.id === id);
-                    
                     if (item && quantity > 0) {
                         item.quantity = quantity;
                         updateCart();
@@ -1602,7 +1553,6 @@
                     }
                 });
             });
-            
             document.querySelectorAll('.remove-item').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const id = e.target.dataset.id;
@@ -1611,16 +1561,13 @@
                 });
             });
         }
-        
         // Update order summary in checkout modal
         function updateOrderSummary() {
             orderItems.innerHTML = '';
-            
             let total = 0;
             cart.forEach(item => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                
                 const orderItemElement = document.createElement('div');
                 orderItemElement.classList.add('order-item');
                 orderItemElement.innerHTML = `
@@ -1629,10 +1576,8 @@
                 `;
                 orderItems.appendChild(orderItemElement);
             });
-            
             orderTotal.textContent = total.toFixed(2);
         }
-        
         // Place order functionality
         placeOrder.addEventListener('click', () => {
             // Get form values
@@ -1646,86 +1591,71 @@
             const expiryDate = document.getElementById('expiryDate').value;
             const cvc = document.getElementById('cvc').value;
             const cardName = document.getElementById('cardName').value;
-            
             // Basic validation
-            if (!fullName || !email || !address || !city || !zipCode || !country || 
+            if (!fullName || !email || !address || !city || !zipCode || !country ||
                 !cardNumber || !expiryDate || !cvc || !cardName) {
                 showNotification('Please fill in all required fields');
                 return;
             }
-            
             // Validate card number (simple validation)
             const cardNumberRegex = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
             if (!cardNumberRegex.test(cardNumber)) {
                 showNotification('Please enter a valid card number (1234 5678 9012 3456)');
                 return;
             }
-            
             // Validate expiry date
             const expiryRegex = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
             if (!expiryRegex.test(expiryDate)) {
                 showNotification('Please enter a valid expiry date (MM/YY)');
                 return;
             }
-            
             // Validate CVC
             const cvcRegex = /^\d{3}$/;
             if (!cvcRegex.test(cvc)) {
                 showNotification('Please enter a valid CVC (3 digits)');
                 return;
             }
-            
             // Process order (in a real app, this would go to a server)
-            alert(`Order placed successfully!\n\nThank you for your purchase, ${fullName}!\n\nYour order details have been sent to ${email}`);
-            
+            alert(`Order placed successfully!
+Thank you for your purchase, ${fullName}!
+Your order details have been sent to ${email}`);
             // Clear cart after successful order
             cart = [];
             updateCart();
-            
             // Close checkout modal
             checkoutModal.classList.remove('active');
-            
             // Reset form
             document.getElementById('checkoutForm').reset();
         });
-        
         // Format card number as user types
         document.getElementById('cardNumber').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 16) value = value.substring(0, 16);
-            
             let formattedValue = '';
             for (let i = 0; i < value.length; i++) {
                 if (i > 0 && i % 4 === 0) formattedValue += ' ';
                 formattedValue += value[i];
             }
-            
             e.target.value = formattedValue;
         });
-        
         // Format expiry date as user types
         document.getElementById('expiryDate').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 4) value = value.substring(0, 4);
-            
             if (value.length >= 2) {
                 value = value.substring(0, 2) + '/' + value.substring(2);
             }
-            
             e.target.value = value;
         });
-        
         // Show notification function
         function showNotification(message) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
             notification.classList.add('show');
-            
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 3000);
         }
-        
         // Image Viewer functionality
         function openImageViewer(imageSrc) {
             const viewer = document.getElementById('imageViewer');
@@ -1733,31 +1663,25 @@
             imgElement.src = imageSrc;
             viewer.classList.add('active');
         }
-        
         function closeImageViewer() {
             document.getElementById('imageViewer').classList.remove('active');
         }
-        
         document.getElementById('closeViewer').addEventListener('click', closeImageViewer);
-        
         // Close image viewer if clicked outside the image
         document.getElementById('imageViewer').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeImageViewer();
             }
         });
-        
         // Prevent closing image viewer if clicking inside the image content
         document.getElementById('viewerImage').addEventListener('click', function(e) {
             e.stopPropagation();
         });
-        
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
         });
-        
         // Example scroll function
         function scrollToSection(sectionId) {
             const element = document.querySelector(sectionId);
@@ -1767,7 +1691,22 @@
                 document.getElementById('mobileMenu').classList.remove('active');
             }
         }
-        
+
+        // Apply smooth scrolling to all links with href starting with #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return; // Ignore links that just go to the top
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.remove('active');
+                }
+            });
+        });
+
         // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1776,5 +1715,4 @@
         });
     </script>
 </body>
-
 </html>
